@@ -43,6 +43,11 @@ namespace StarForce
             });
         }
 
+        public void OnOpenLearnForm()
+        {
+            GameEntry.UI.OpenUIForm(AssetUtility.GetUIFormAsset("TestForm"), "Default");
+        }
+
 #if UNITY_2017_3_OR_NEWER
         protected override void OnOpen(object userData)
 #else
