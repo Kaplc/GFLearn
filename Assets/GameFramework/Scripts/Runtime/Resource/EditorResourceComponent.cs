@@ -475,7 +475,7 @@ namespace UnityGameFramework.Runtime
                 throw new NotSupportedException("ResourcePriority");
             }
         }
-
+        
         /// <summary>
         /// 获取等待编辑器加载的资源数量。
         /// </summary>
@@ -523,6 +523,11 @@ namespace UnityGameFramework.Runtime
         /// 资源更新全部完成事件。
         /// </summary>
         public event EventHandler<GameFramework.Resource.ResourceUpdateAllCompleteEventArgs> ResourceUpdateAllComplete = null;
+        
+        public event EventHandler<GameFramework.Resource.ResourceVerifyStartEventArgs> ResourceVerifyStart;
+        public event EventHandler<GameFramework.Resource.ResourceVerifySuccessEventArgs> ResourceVerifySuccess;
+        public event EventHandler<GameFramework.Resource.ResourceVerifyFailureEventArgs> ResourceVerifyFailure;
+        public event EventHandler<ResourceApplyStartEventArgs> ResourceApplyStart;
 
 #pragma warning restore 0067, 0414
 
@@ -824,6 +829,11 @@ namespace UnityGameFramework.Runtime
         public void UpdateVersionList(int versionListLength, int versionListHashCode, int versionListCompressedLength, int versionListCompressedHashCode, UpdateVersionListCallbacks updateVersionListCallbacks)
         {
             throw new NotSupportedException("UpdateVersionList");
+        }
+
+        public void VerifyResources(int verifyResourceLengthPerFrame, VerifyResourcesCompleteCallback verifyResourcesCompleteCallback)
+        {
+            
         }
 
         /// <summary>
