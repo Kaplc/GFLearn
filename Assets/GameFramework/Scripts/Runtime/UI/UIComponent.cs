@@ -22,7 +22,7 @@ namespace UnityGameFramework.Runtime
     public sealed partial class UIComponent : GameFrameworkComponent
     {
         private const int DefaultPriority = 0;
-
+        
         private IUIManager m_UIManager = null;
         private EventComponent m_EventComponent = null;
 
